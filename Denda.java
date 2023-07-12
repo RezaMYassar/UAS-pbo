@@ -11,7 +11,7 @@ public class Denda {
     public Peminjaman getPeminjaman() {
         return peminjaman;
     }
-
+// TEST
     public int getTagihan() {
         return hariTerlambat * TARIF_DENDA;
     }
