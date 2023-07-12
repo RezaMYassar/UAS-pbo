@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        // testpush1
 
         Buku buku1 = new Buku("0001", "Pemrogramman Java");
         Buku buku2 = new Buku("0002", "Pemrogramman C++");
@@ -12,32 +11,32 @@ public class Main {
         peminjam1.setKodePeminjam("M001");
 
         peminjam1.doLogin();
-        // peminjam1.doLogout();
 
         try {
             Peminjaman peminjaman1 = new Peminjaman(peminjam1, petugas1, buku3);
+            Denda denda1 = new Denda(peminjaman1, 5);
 
             System.out.println("Nama Peminjam :" + peminjaman1.getPeminjam().getNamaPeminjam());
             System.out.println("Kode Peminjam :" + peminjaman1.getPeminjam().getKodePeminjam());
             System.out.println("Nama Petugas :" + peminjaman1.getPetugas().getNamaPetugas());
             System.out.println("Nama Buku :" + peminjaman1.getBuku().getNamaBuku());
-            Denda denda2 = new Denda(peminjam1, hariTerlambat:5);
-            System.out.println("Tagihan denda:" + denda1.getTagihan());
 
-            system.out.println(x:"=====================================")
+            System.out.println("Tagihan denda: " + denda1.getTagihan());
 
-            Peminjaman peminjaman2 = new Peminjaman( peminjaman2, petugas1, buku3):
+            System.out.println("=== Denda dihapuskan ! ===");
+            peminjam1.addAntiDenda();
+            System.out.println("Tagihan denda: " + denda1.getTagihan());
 
-            System.out.println("Nama Peminjam :" + peminjaman2.getPeminjam().getNamaPeminjam());
-            System.out.println("Kode Peminjam :" + peminjaman2.getPeminjam().getKodePeminjam());
-            System.out.println("Nama Petugas :" + peminjaman2.getPetugas().getNamaPetugas());
-            System.out.println("Nama Buku :" + peminjaman2.getBuku().getNamaBuku());
-            Denda denda2 = new Denda(peminjam2, hariTerlambat:7);
-            System.out.println("Tagihan denda:" + denda2.getTagihan());
+            System.out.println("=== Denda ditambahkan ! ===");
+            peminjam1.removeAntiDenda();
+            System.out.println("Tagihan denda: " + denda1.getTagihan());
 
-            Sytem.out.println(x:"=== Denda dihapuskan ! ===");
-        
+        } catch (Exception e) {
+            System.out.println("Terjadi Kesalahan" + e.getMessage());
+        } finally {
             System.out.println("Program Selesai");
         }
+        peminjam1.doLogout();
+
     }
 }

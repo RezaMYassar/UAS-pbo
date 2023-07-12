@@ -7,7 +7,6 @@ public class Buku {
         this.namaBuku = namaBuku;
     }
 
-    // testrepoo
     protected String getIdBuku() {
         return idBuku;
     }
